@@ -8,7 +8,20 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
+            trim: true
         },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            // validate:
+        },
+        thoughts: [
+            // array of id values referencing thought model
+        ],
+        friends: [
+            // array of id values referencing user model
+        ]
     }
 );
 
