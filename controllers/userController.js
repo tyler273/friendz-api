@@ -79,5 +79,5 @@ module.exports = {
             console.log(err);
             res.status(500).json(err);
         }
-    }
+    },
 };
