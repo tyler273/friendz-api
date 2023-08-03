@@ -18,8 +18,25 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
+            get: timeStamp,
+        },
+    },
+    {
+        toJSON: {
+            getters: true,
         },
     }
 );
+
+// getter to format date upon query
+function timeStamp(createdAt) {
+    return createdAt.toLocaleDataString("en-US", {
+        day: "2-digit",
+        year: "numeric",
+        month: "long",
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+}
 
 module.exports = reactionSchema;
