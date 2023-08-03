@@ -69,7 +69,7 @@ module.exports = {
         }
     },
 
-    // Add a reaction
+  // Add a reaction
   async addReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
@@ -87,8 +87,8 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Remove reaction
-  async removeReaction(req, res) {
+  // Delete reaction
+  async deleteReaction(req, res) {
     try {
       const thought = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
