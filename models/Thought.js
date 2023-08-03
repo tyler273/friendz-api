@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const Reaction = require('./Reaction');
 
 // Schema to create a thought model
 const thoughtSchema = new Schema(
@@ -11,17 +12,40 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now 
+            default: Date.now,
+            get: timeStamp,
         },
         username: {
             type: String,
             required: true
         },
-        reactions: [
-            // array of nested docs created w reactionSchema
-        ],
+        reactions: [Reaction],
+    },
+    {
+        toJSON: {
+            getters: true,
+            virtuals: true
+        },
     }
 );
+
+thoughtSchema
+  .virtual('reactionCount')
+  // Getter
+  .get(function () {
+    return this.reactions.length;
+});
+
+// getter to format date upon query
+function timeStamp(createdAt) {
+    return createdAt.toLocaleDataString("en-US", {
+        day: "2-digit",
+        year: "numeric",
+        month: "long",
+        hour: "2-digit",
+        minute: "2-digit",
+    });
+}
 
 const Thought = model('thought', thoughtSchema);
 
