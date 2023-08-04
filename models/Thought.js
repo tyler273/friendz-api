@@ -38,7 +38,7 @@ thoughtSchema
 
 // getter to format date upon query
 function timeStamp(createdAt) {
-    return createdAt.toLocaleDataString("en-US", {
+    return createdAt.toLocaleDateString("en-US", {
         day: "2-digit",
         year: "numeric",
         month: "long",
