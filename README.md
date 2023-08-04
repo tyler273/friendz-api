@@ -16,6 +16,8 @@ Lastly, the user must also install mongoose using `npm i mongoose` for the Objec
 
 ## Usage
 
+Upon opening the application the ruser can run the server using `node index` before switching over to Insomnia. There they will be able to test out all of their endpoint routes.
+
 [Click here for walkthrough video of the application](https://drive.google.com/file/d/1Tw6vnqGk0SWi4g8ZoANRJYKoJyu3SZN8/view)
 
 ## Credits
