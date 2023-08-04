@@ -16,11 +16,11 @@ Lastly, the user must also install mongoose using `npm i mongoose` for the Objec
 
 ## Usage
 
-Walkthrough video will be linked here!
+[Click here for walkthrough video of the application](https://drive.google.com/file/d/1Tw6vnqGk0SWi4g8ZoANRJYKoJyu3SZN8/view)
 
 ## Credits
 
-
+I was able to complete the assignment through tutoring from my fellow peer [Myro Lee](https://github.com/myrojoylee)!
 
 ## License
 
